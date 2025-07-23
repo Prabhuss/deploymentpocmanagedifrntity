@@ -26,7 +26,7 @@ def log_request_details():
     print(f"Request body: {request.get_data(as_text=True)}")
 
 # Health Check Endpoint (POST)
-@app.route("/ping", methods=["POST"])
+@app.route("/ping", methods=["POST","GET"])
 def ping():
     log_request_details()
     return jsonify({"message": "POST is working", "data": request.json}), 200
